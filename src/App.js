@@ -25,7 +25,7 @@ const COLUMN_COUNT = 5;
 const App = () => {
   const [completedWords, setCompletedWords] = useLocalStorage(
     'completedWords',
-    [],
+    []
   );
   const [gameCount, setGameCount] = useLocalStorage('gameCount', 0);
   const [winCount, setWinCount] = useLocalStorage('winCount', 0);
@@ -40,16 +40,16 @@ const App = () => {
       4: 0,
       5: 0,
       6: 0,
-    },
+    }
   );
 
   const wordsToRemove = new Set(completedWords);
   const nonCompletedWords = words.filter((x) => !wordsToRemove.has(x));
   const [word, setWord] = useState(
-    nonCompletedWords[randomIntFromInterval(0, nonCompletedWords.length)],
+    nonCompletedWords[randomIntFromInterval(0, nonCompletedWords.length)]
   );
   const [entries, setEntries] = useState(
-    Array.from({ length: ROW_COUNT }, () => Array(COLUMN_COUNT).fill('')),
+    Array.from({ length: ROW_COUNT }, () => Array(COLUMN_COUNT).fill(''))
   );
   const [currentRow, setCurrentRow] = useState(0);
   const [matches, setMatches] = useState([]);
@@ -198,10 +198,10 @@ const App = () => {
     const wordsToRemove = new Set(completedWords);
     const nonCompletedWords = words.filter((x) => !wordsToRemove.has(x));
     setEntries(
-      Array.from({ length: ROW_COUNT }, () => Array(COLUMN_COUNT).fill('')),
+      Array.from({ length: ROW_COUNT }, () => Array(COLUMN_COUNT).fill(''))
     );
     setWord(
-      nonCompletedWords[randomIntFromInterval(0, nonCompletedWords.length)],
+      nonCompletedWords[randomIntFromInterval(0, nonCompletedWords.length)]
     );
     setCurrentRow(0);
     setMatches([]);
