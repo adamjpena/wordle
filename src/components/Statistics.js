@@ -4,7 +4,7 @@ import styles from './Statistics.module.scss';
 
 const Statistics = ({
   gameCount,
-  winCount,
+  streakCount,
   streak,
   maxStreak,
   guessDistribution,
@@ -25,7 +25,7 @@ const Statistics = ({
             <tr>
               <td className={styles.stat}>{gameCount}</td>
               <td className={styles.stat}>
-                {Math.floor((winCount / gameCount) * 100)}%
+                {Math.floor((streakCount / gameCount) * 100)}%
               </td>
               <td className={styles.stat}>{streak}</td>
               <td className={styles.stat}>{maxStreak}</td>
@@ -55,7 +55,7 @@ const Statistics = ({
                       width:
                         count === 0
                           ? 0
-                          : `${Math.floor((count / winCount) * 100)}%`,
+                          : `${Math.floor((count / streakCount) * 100)}%`,
                     }}
                   >
                     <div className={styles.numGuesses}>{count}</div>

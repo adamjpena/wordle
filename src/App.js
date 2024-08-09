@@ -28,9 +28,9 @@ const App = () => {
     []
   );
   const [gameCount, setGameCount] = useLocalStorage('gameCount', 0);
-  const [winCount, setWinCount] = useLocalStorage('winCount', 0);
-  const [streak, setStreak] = useLocalStorage('winCount', 0);
-  const [maxStreak, setMaxStreak] = useLocalStorage('winCount', 0);
+  const [streakCount, setStreakCount] = useLocalStorage('streakCount', 0);
+  const [streak, setStreak] = useLocalStorage('streakCount', 0);
+  const [maxStreak, setMaxStreak] = useLocalStorage('streakCount', 0);
   const [guessDistribution, setGuessDistribution] = useLocalStorage(
     'guessDistribution',
     {
@@ -87,7 +87,7 @@ const App = () => {
       setStreak(streak + 1);
       setMaxStreak(Math.max(maxStreak, streak + 1));
       setCurrentRow(currentRow + 1);
-      setWinCount(winCount + 1);
+      setStreakCount(streakCount + 1);
       setCompletedWords([...completedWords, word]);
       setGuessDistribution(updatedGuessDistribution);
       setShouldShowConfetti(true);
@@ -235,7 +235,7 @@ const App = () => {
           <Overlay>
             <Statistics
               gameCount={gameCount}
-              winCount={winCount}
+              streakCount={streakCount}
               streak={streak}
               maxStreak={maxStreak}
               guessDistribution={guessDistribution}
